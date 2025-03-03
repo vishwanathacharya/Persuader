@@ -1,0 +1,15 @@
+name: Detect Programming Language
+
+on: [push, pull_request]
+
+jobs:
+  detect-language:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run Language Detection Script
+        run: |
+          chmod +x detect_language.sh
+          ./detect_language.sh
